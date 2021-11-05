@@ -12,8 +12,15 @@
   "author": "Misael Peloc",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.4.0",
     "gulp": "^3.9.1",
+    "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.0.0",
+    "postcss": "^8.3.11",
     "sass": "^1.43.4"
-  }
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%"
+  ]
 }
