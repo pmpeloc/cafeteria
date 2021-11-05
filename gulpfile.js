@@ -1,8 +1,11 @@
-// Tener en cuenta de modificar el package.json
-// ejecutar npm i, luego npx npm-force-resolutions y luego npm i
-function tarea(done) {
-  console.log('Desde mi primer tarea...');
+const { src, dest } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+
+function css(done) {
+  // Compilar sass
+  // Pasos: 1- identificar archivo, 2- compilar, 3- guardar el .css
+  src('src/scss/app.scss').pipe(sass()).pipe(dest('build/css'));
   done();
 }
 
-exports.tarea = tarea;
+exports.css = css;

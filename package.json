@@ -12,6 +12,8 @@
   "author": "Misael Peloc",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.43.4"
   }
 }
