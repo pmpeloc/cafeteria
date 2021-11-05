@@ -1,1 +1,10 @@
-body{background-color:#000;color:#fff;display:flex}
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+}
