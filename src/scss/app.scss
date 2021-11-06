@@ -1,12 +1,1 @@
-// @import 'header/header';
-@use 'header/header';
-@use 'header/navegacion';
 
-$color: black;
-$color2: white;
-
-body {
-  background-color: $color;
-  color: $color2;
-  display: flex;
-}
