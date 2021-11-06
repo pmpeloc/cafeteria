@@ -8,6 +8,7 @@ const autoprefixer = require('autoprefixer');
 
 // Imagenes
 const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
 
 function css(done) {
   // Compilar sass
@@ -27,6 +28,10 @@ function imagenes(done) {
   done();
 }
 
+function versionWebp() {
+  return src('src/img/**/*.{png,jpg}').pipe(webp()).pipe(dest('build/img'));
+}
+
 function dev() {
   watch('src/scss/**/*.scss', css);
   watch('src/img/**/*', imagenes);
@@ -34,8 +39,9 @@ function dev() {
 
 exports.css = css;
 exports.dev = dev;
-exports, (imagenes = imagenes);
-exports.default = series(css, imagenes, dev);
+exports.imagenes = imagenes;
+exports.versionWebp = versionWebp;
+exports.default = series(css, imagenes, versionWebp, dev);
 
 // series - Se inicia una tarea, y hasta que finaliza, inicia la siguiente
 // parallel - Todas inician al mismo tiempo
