@@ -403,6 +403,7 @@ h3 {
 .header {
   padding: 5rem 0;
   position: relative;
+  background-color: red;
 }
 .header::before {
   content: "";
@@ -420,4 +421,5 @@ h3 {
 
 .header-inicio {
   background-image: url(../img/header_inicio.jpg);
+  background-color: blue;
 }
