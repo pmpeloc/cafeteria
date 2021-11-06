@@ -15,18 +15,20 @@ function css(done) {
   done();
 }
 
-function dev() {
-  watch('src/scss/**/*.scss', css);
-  watch('src/scss/app.scss', css);
+function imagenes(done) {
+  src('src/img/**/*').pipe(dest('build/img'));
+  done();
 }
 
-function tareaDefault() {
-  console.log('soy la tarea por default');
+function dev() {
+  watch('src/scss/**/*.scss', css);
+  watch('src/img/**/*', imagenes);
 }
 
 exports.css = css;
 exports.dev = dev;
-exports.default = series(css, dev);
+exports, (imagenes = imagenes);
+exports.default = series(css, imagenes, dev);
 
 // series - Se inicia una tarea, y hasta que finaliza, inicia la siguiente
 // parallel - Todas inician al mismo tiempo
