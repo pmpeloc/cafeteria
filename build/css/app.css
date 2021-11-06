@@ -403,7 +403,21 @@ h3 {
 .header {
   padding: 5rem 0;
   position: relative;
-  background-color: red;
+}
+@media (min-width: 480px) {
+  .header {
+    padding: 4rem;
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .header {
+    padding: 2rem;
+  }
 }
 .header::before {
   content: "";
@@ -421,5 +435,4 @@ h3 {
 
 .header-inicio {
   background-image: url(../img/header_inicio.jpg);
-  background-color: blue;
 }
