@@ -1,8 +1,13 @@
 // npm install gulpjs/gulp#v4.0.0-alpha.3 (para usar series)
 const { src, dest, watch, series, parallel } = require('gulp');
+
+// CSS y SASS
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
+
+// Imagenes
+const imagemin = require('gulp-imagemin');
 
 function css(done) {
   // Compilar sass
@@ -16,7 +21,9 @@ function css(done) {
 }
 
 function imagenes(done) {
-  src('src/img/**/*').pipe(dest('build/img'));
+  src('src/img/**/*')
+    .pipe(imagemin({ optimizationLevel: 3 }))
+    .pipe(dest('build/img'));
   done();
 }
 
